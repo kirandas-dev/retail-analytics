@@ -33,3 +33,15 @@ To set up the project environment, create a virtual environment and install the 
 
 ```shell
 pip install -r requirements.txt
+
+## Downloading Data
+Please download the raw data and kindly save it to the data/raw folder. Data size is heavy and cannot unfortunately be uploaded to Github.:
+Training data: (https://drive.google.com/file/d/1-0x5Vfri1i-OL3ek2GnhZGye-4eqbqQA/view?usp=drive_link)
+
+Evaluation data: (https://drive.google.com/file/d/1-2PahhxOmBOCnVNTpgaNGkirjlJz9wYH/view?usp=drive_link)
+
+Calendar: (https://drive.google.com/file/d/1-6cH8c0tKTFu8EzMJyVfdhxrny6rdgrM/view?usp=drive_link)
+
+Events: (https://drive.google.com/file/d/1_RmDGfRTMkqF4OO9NibNoRhbEjc0OZW4/view?usp=drive_link)
+
+Items price per week: (https://drive.google.com/file/d/1--W-RjAnypyvbwUCsSZVldrA2Ja2jtDA/view?usp=drive_link)
