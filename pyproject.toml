@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "retail-analytics\u001b[c"
+version = "0.1.0"
+description = "This project involves developing two distinct predictive and forecasting models for an American retailer with 10 stores across three different states (California, Texas, and Wisconsin) that sell items from three categories: hobbies, foods, and household."
+authors = ["kirandas-dev <KiranShanker.Das@student.uts.edu.au>"]
+license = "No License"
+readme = "README.md"
+packages = [{include = "retail_analytics\u001b[c"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jupyterlab = "3.6.3"
+pandas = "2.0.1"
+scikit-learn = "1.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
