@@ -27,12 +27,38 @@ else:
 # Solution:
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {
+        "Project Objectives": "This project deploys two different models as APIs:",
+        "1. Predictive Model": {
+            "Description": "Predicts sales revenue for an item in a specific store on a given date.",
+             "Example URL": " http://localhost:8000/stores/items/?input_date=2011-01-30&item_id=HOBBIES_1_001&store_id=CA_1",
+            "Input Parameters": {
+                "input_date": "Date for prediction (YYYY-MM-DD)",
+                "item_id": "ID of the item",
+                "store_id": "ID of the store"
+            },
+            "Output Format": {
+                "Predicted Sales": "Predicted sales revenue"
+            }
+        },
+        "2. Forecasting Model": {
+            "Description": "Forecasts total sales revenue across all stores and items for the next 7 days.",
+            "Example URL": " http://127.0.0.1:8000/national?input_date=2016-01-30 ",
+            "Input Parameters": {
+                "input_date": "Date for forecasting (YYYY-MM-DD)"
+            },
+            "Output Format": {
+                "sales_forecast": "Forecasted sales revenue for the next 7 days"
+            }
+        },
+        "GitHub Repository": "Link to GitHub repo: [GitHub Repo Link](https://github.com/kirandas-dev/retail-analytics)"
+    }
+
 
 
 @app.get('/health', status_code=200)
 def healthcheck():
-    return 'Forecasting model is all ready to go!'
+    return 'Hello there. Welcome! Get some useful insights using our predictives analytics on the American Retail Store!'
 
 
 @app.get('/national', status_code=200)
