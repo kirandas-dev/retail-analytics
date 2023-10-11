@@ -49,5 +49,7 @@ Items price per week: (https://drive.google.com/file/d/1--W-RjAnypyvbwUCsSZVldrA
 
 App run: In order to run the app, 
 1. Please change directory to /Model_Serving : cd Model_Serving
-2. Run uvicorn app.main:app 
-3. http://127.0.0.1:8000/docs 
+2. poetry shell
+3. $ pip install -r requirements.txt
+4. Run uvicorn app.main:app 
+5. http://127.0.0.1:8000/docs 
