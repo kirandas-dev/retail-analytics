@@ -3,15 +3,14 @@ from starlette.responses import JSONResponse
 from joblib import load
 import pandas as pd
 import os 
-from src.models.forecast_predict_model import ARIMATransformer
-#from Model_Training.forecast_predict_model import ARIMATransformer 
+
+from Model_Training_Files.forecast_predict_model import SARIMAXTransformer
+
 import joblib
 
-models_dir = "models/forecasting"  # Update the directory name
-os.makedirs(models_dir, exist_ok=True)
-model_filename = os.path.join(models_dir, f'arima_pipeline.joblib')
-print(model_filename)
 app = FastAPI()
+
+model_filename= "/Models/forecasting/sarima_pipeline.joblib"
 
 # Load your historical data
 train_data = pd.read_csv('https://raw.githubusercontent.com/kirandas-dev/data-ML/main/combined_time_series.csv', low_memory=False)
@@ -120,7 +119,7 @@ def sales_predict(input_date: str, item_id: str, store_id: str):
 
     if model_group is not None:
         # Load the trained model for the determined model_group
-        model_file_path = f"../Model_Serving/Models/predictive/model_group_{model_group}.joblib"
+        model_file_path = f"/Models/predictive/model_group_{model_group}.joblib"
         loaded_model = joblib.load(model_file_path)
 
         # Prepare the input data for prediction
@@ -147,3 +146,10 @@ def sales_predict(input_date: str, item_id: str, store_id: str):
             return JSONResponse(content={"Predicted Sales": predicted_sales_list})
         else:
             return {"message": "Invalid store_id"}
+        
+
+    if __name__ == "__main__":
+     import uvicorn
+
+    # Use uvicorn to run the FastAPI app
+    #uvicorn.run(app, host="0.0.0.0", port=8000)
