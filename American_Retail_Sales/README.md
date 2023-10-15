@@ -47,9 +47,30 @@ Events: (https://drive.google.com/file/d/1_RmDGfRTMkqF4OO9NibNoRhbEjc0OZW4/view?
 Items price per week: (https://drive.google.com/file/d/1--W-RjAnypyvbwUCsSZVldrA2Ja2jtDA/view?usp=drive_link)
 
 
-App run: In order to run the app, 
-1. Please change directory to /Model_Serving : cd Model_Serving
-2. poetry shell
-3. $ pip install -r requirements.txt
-4. Run uvicorn app.main:app 
-5. http://127.0.0.1:8000/docs 
+App run:
+To run Locally: CLI command: Run uvicorn app.main:app 
+URL:http://localhost:8000/stores/items/?input_date=2011-01-30&item_id=HOBBIES_1_001&store_id=CA_1 
+Input:
+input_date: 2011-01-30
+item_id: HOBBIES_1_001
+store_id: CA_1
+Output:
+Predicted Sales: Predicted sales revenue for the specified item on the provided date.
+ To run on Heroku: https://secure-peak-90069-e56e8c2b65a7.herokuapp.com/stores/items/?input_date=2011-01-30&item_id=HOBBIES_1_001&store_id=CA_1  
+
+b.Forecasting Model Endpoint:
+
+Description: This endpoint forecasts total sales revenue across all stores and items for the next 7 days.
+Input Parameters:
+input_date: Date for forecasting (in YYYY-MM-DD format)
+Output Format:
+sales_forecast: Forecasted sales revenue for the next 7 days.
+Usage Example:
+To run Locally: CLI command: Run uvicorn app.main:app 
+
+URL: http://127.0.0.1:8000/national?input_date=2016-01-30 
+Input:
+input_date: 2016-01-30
+Output:
+sales_forecast: Forecasted sales revenue for the next 7 days.
+To run on Heroku: https://secure-peak-90069-e56e8c2b65a7.herokuapp.com/national?input_date=2016-01-30 
